@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashish</title>
+    <style>
+      .container {
+        position: absolute;
+        left: 36vw;
+        top: 20vh;
+        display: flex;
+        width: 250px;
+        height: 250px;
+        background-color: transparent;
+      }
+      #circle1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        margin-right: 250px;
+        border-radius: 25px;
+        background-color: red;
+        z-index: 4;
+      }
+
+      @keyframes cir1 {
+        0% {
+          background-color: red;
+          width: 50px;
+          height: 50px;
+        }
+        16.66% {
+          background-color: yellow;
+          width: 250px;
+        }
+        33.3% {
+          background-color: yellow;
+          width: 50px;
+          height: 50px;
+        }
+        49.99% {
+          background-color: rgb(52, 183, 235);
+          width: 250px;
+        }
+        66.66% {
+          background-color: rgb(52, 183, 235);
+          width: 50px;
+          height: 50px;
+        }
+        83.31% {
+          background-color: green;
+          width: 250px;
+        }
+        100% {
+          background-color: green;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      #circle2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: yellow;
+        z-index: 3;
+      }
+      @keyframes cir2 {
+        0% {
+          background-color: yellow;
+          width: 50px;
+          height: 50px;
+        }
+        16.66% {
+          background-color: rgb(52, 183, 235);
+          height: 250px;
+        }
+        33.3% {
+          background-color: rgb(52, 183, 235);
+          width: 50px;
+          height: 50px;
+        }
+        49.99% {
+          background-color: green;
+          height: 250px;
+        }
+        66.66% {
+          background-color: green;
+          width: 50px;
+          height: 50px;
+        }
+        83.31% {
+          background-color: red;
+          height: 250px;
+        }
+        100% {
+          background-color: red;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      #circle3 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgb(52, 183, 235);
+        z-index: 2;
+      }
+
+      @keyframes cir3 {
+        0% {
+          background-color: rgb(52, 183, 235);
+          width: 50px;
+          height: 50px;
+        }
+        16.66% {
+          background-color: green;
+          width: 250px;
+        }
+        33.3% {
+          background-color: green;
+          width: 50px;
+          height: 50px;
+        }
+        49.99% {
+          background-color: red;
+          width: 250px;
+        }
+        66.66% {
+          background-color: red;
+          width: 50px;
+          height: 50px;
+        }
+        83.31% {
+          background-color: yellow;
+          width: 250px;
+        }
+        100% {
+          background-color: yellow;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      #circle4 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: green;
+        z-index: 1;
+      }
+      @keyframes cir4 {
+        0% {
+          background-color: green;
+          width: 50px;
+          height: 50px;
+        }
+        16.66% {
+          background-color: red;
+          height: 250px;
+        }
+        33.3% {
+          background-color: red;
+          width: 50px;
+          height: 50px;
+        }
+        49.99% {
+          background-color: yellow;
+          height: 250px;
+        }
+        66.66% {
+          background-color: yellow;
+          width: 50px;
+          height: 50px;
+        }
+        83.31% {
+          background-color: rgb(52, 183, 235);
+          height: 250px;
+        }
+        100% {
+          background-color: rgb(52, 183, 235);
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      #start {
+        position: absolute;
+        left: 500px;
+        top: 400px;
+        background-color: teal;
+        color: white;
+      }
+
+      #stop {
+        position: absolute;
+        left: 700px;
+        top: 400px;
+        background-color: teal;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="circle1"></div>
+
+      <div id="circle2"></div>
+
+      <div id="circle3"></div>
+
+      <div id="circle4"></div>
+    </div>
+    <button id="start" type="button">Start</button>
+
+    <button id="stop" type="button">Stop</button>
+
+    <script>
+      start.addEventListener("click", function () {
+        circle1.style.animation = "cir1 8s linear infinite";
+        circle2.style.animation = "cir2 8s linear infinite";
+        circle3.style.animation = "cir3 8s linear infinite";
+        circle4.style.animation = "cir4 8s linear infinite";
+      });
+      let stop = document.getElementById("stop");
+      stop.addEventListener("click", function (event) {
+        circle1.style.animationPlayState = "paused";
+        circle2.style.animationPlayState = "paused";
+        circle3.style.animationPlayState = "paused";
+        circle4.style.animationPlayState = "paused";
+      });
+    </script>
+  </body>
+</html>
